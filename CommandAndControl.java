@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * Command and Control class
  *
- * An instance accepts user input
+ * An instance accepts user input and sends a task to the broker.
  *
  */
 public class CommandAndControl extends Node {
@@ -29,7 +29,7 @@ public class CommandAndControl extends Node {
     /**
      * Constructor
      *
-     * Attempts to create socket at given port and create an InetSocketAddress for the destinations
+     * Attempts to create socket at given port and create an InetSocketAddress for the destinations.
      */
     CommandAndControl(String dstHost, int dstPort, int srcPort) {
         try {
@@ -50,13 +50,17 @@ public class CommandAndControl extends Node {
 
 
     /**
-     * Assume that incoming packets contain a String and print the string.
+     * Checks the data from the packet coming from the broker.
      */
     public synchronized void onReceipt(DatagramPacket packet) {
         PacketContent content= PacketContent.fromDatagramPacket(packet);
-        System.out.println(content.toString());
-        brokerReceived = true;
-        this.notify();
+        if(!((AckPacketContent)content).toString().equals("complete")) {
+            System.out.println(content.toString());
+            brokerReceived = true;
+        }
+        else{
+            this.notify();
+        }
     }
 
 
@@ -82,7 +86,7 @@ public class CommandAndControl extends Node {
     /**
      * Test method
      *
-     * Sends a packet to a given address
+     * Sends a packet to a given address.
      */
     public static void main(String[] args) {
         try {

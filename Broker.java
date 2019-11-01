@@ -5,6 +5,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ *
+ * Broker Class
+ *
+ * An instance that receives a task from the broker and forwards it out to the available workers.
+ *
+ */
 public class Broker extends Node {
     static final int DEFAULT_PORT = 50001;
     private List<SocketAddress> allWorkers;
@@ -12,6 +19,7 @@ public class Broker extends Node {
     private BrokerPacket brokerPacket;
     private int count;
     private Thread workers;
+    private SocketAddress commandSocket;
     /*
      *
      */
@@ -28,7 +36,7 @@ public class Broker extends Node {
     }
 
     /**
-     * Assume that incoming packets contain a String and print the string.
+     * Checks the type of packet and responds appropriately.
      */
     public synchronized void onReceipt(DatagramPacket packet) {
         try {
@@ -50,6 +58,7 @@ public class Broker extends Node {
                 }
             }
             if (content.getType() == PacketContent.COMMANDPACKET) {
+                commandSocket = packet.getSocketAddress();
                 System.out.println("Received CommandPacket: " + (CommandPacket)content);
                 commandPacket = (CommandPacket) content;
                 brokerPacket = new BrokerPacket(((CommandPacket) commandPacket).getData());
@@ -57,13 +66,11 @@ public class Broker extends Node {
 
                 DatagramPacket response;
                 response = new AckPacketContent("OK - CommandPacket").toDatagramPacket();
-                response.setSocketAddress(packet.getSocketAddress());
+                response.setSocketAddress(commandSocket);
                 socket.send(response);
                 System.out.println("Sent AckPacket: " + response);
 
-                workers = new Thread(() -> {
-                    startWork();
-                });
+                workers = new Thread(this::startWork);
                 workers.start();
             }
         } catch (Exception e) {
@@ -76,6 +83,9 @@ public class Broker extends Node {
             this.wait();
     }
 
+    /**
+     * Sends out the work to the workers in the list of available workers.
+     */
     private synchronized void startWork() {
         while(count > 0) {
             Iterator itr = allWorkers.iterator();
@@ -99,6 +109,14 @@ public class Broker extends Node {
             } catch(Exception e) {
                 e.printStackTrace();
             }
+        }
+        try {
+            DatagramPacket response;
+            response = new AckPacketContent("complete").toDatagramPacket();
+            response.setSocketAddress(commandSocket);
+            socket.send(response);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         System.out.println("Task Complete");
     }

@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * Worker class
  *
- * Does Task
+ * Prints the data given to it from the broker.
  *
  */
 public class Worker extends Node {
@@ -50,7 +50,7 @@ public class Worker extends Node {
 
 
     /**
-     * Assume that incoming packets contain a String and print the string.
+     * Checks the type of packet and responds appropriately.
      */
     public synchronized void onReceipt(DatagramPacket packet) {
         PacketContent content= PacketContent.fromDatagramPacket(packet);

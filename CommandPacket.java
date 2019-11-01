@@ -2,7 +2,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * Class for packet content that represents file information
+ * Class for packet content that represents the information from the CommandAndControl
  *
  */
 public class CommandPacket extends PacketContent {
@@ -11,8 +11,8 @@ public class CommandPacket extends PacketContent {
     String data;
 
     /**
-     * Constructor that takes in information about a file.
-     * @param description Initial description.
+     * Constructor that takes in information from the CommandAndControl.
+     * @param data String to be printed.
      * @param numTasks The Number of Tasks.
      */
     CommandPacket(int numTasks, String data) {
@@ -23,7 +23,7 @@ public class CommandPacket extends PacketContent {
 
     /**
      * Constructs an object out of a datagram packet.
-     * @param packet Packet that contains information about a file.
+     * @param packet Packet that contains information from the CommandAndControl.
      */
     protected CommandPacket(ObjectInputStream oin) {
         try {

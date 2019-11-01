@@ -11,8 +11,7 @@ public class AckPacketContent extends PacketContent {
 
 	/**
 	 * Constructor that takes in information about a file.
-	 * @param filename Initial filename.
-	 * @param size Size of filename.
+	 * @param info Acknowledgements info.
 	 */
 	AckPacketContent(String info) {
 		type= ACKPACKET;
@@ -21,7 +20,7 @@ public class AckPacketContent extends PacketContent {
 
 	/**
 	 * Constructs an object out of a datagram packet.
-	 * @param packet Packet that contains information about a file.
+	 * @param packet Packet that contains acknowledgements.
 	 */
 	protected AckPacketContent(ObjectInputStream oin) {
 		try {

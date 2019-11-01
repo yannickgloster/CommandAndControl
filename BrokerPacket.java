@@ -2,7 +2,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * Class for packet content that represents file information
+ * Class for packet content that represents a broker packet
  *
  */
 public class BrokerPacket extends PacketContent {
@@ -10,8 +10,8 @@ public class BrokerPacket extends PacketContent {
     String data;
 
     /**
-     * Constructor that takes in information about a file.
-     * @param description Initial description.
+     * Constructor that takes a String from a Broker.
+     * @param data Initial description.
      */
     BrokerPacket(String data) {
         type= BROKERPACKET;

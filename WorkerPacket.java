@@ -2,7 +2,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * Class for packet content that represents file information
+ * Class for packet content that represents the availability of a worker.
  *
  */
 public class WorkerPacket extends PacketContent {
@@ -26,7 +26,7 @@ public class WorkerPacket extends PacketContent {
 
 	/**
 	 * Constructs an object out of a datagram packet.
-	 * @param packet Packet that contains information about a file.
+	 * @param packet Packet that contains the availability of a worker.
 	 */
 	protected WorkerPacket(ObjectInputStream oin) {
 		try {

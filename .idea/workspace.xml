@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06dd38e6-1204-4b00-ac07-9865220efadd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSU23031 Assignment 1.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AckPacketContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/AckPacketContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Broker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Broker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrokerPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/BrokerPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommandAndControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CommandAndControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommandPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/CommandPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkerPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerPacket.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +30,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RF1YK4Y8xLjvsg7vkkKnWb698K" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -98,6 +108,7 @@
       <workItem from="1571140511087" duration="35000" />
       <workItem from="1572344228525" duration="881000" />
       <workItem from="1572613093181" duration="1158000" />
+      <workItem from="1572620473648" duration="2260000" />
     </task>
     <servers />
   </component>
@@ -116,5 +127,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -66,7 +66,7 @@ public class Worker extends Node {
                 e.printStackTrace();
             }
 
-            System.out.println(((BrokerPacket) content).getData());
+            System.out.println("Print: " + ((BrokerPacket) content).getData());
 
             try {
                 receivedWork = false;

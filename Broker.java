@@ -35,7 +35,7 @@ public class Broker extends Node {
             PacketContent content = PacketContent.fromDatagramPacket(packet);
 
             if (content.getType() == PacketContent.WORKERPACKET) {
-
+                System.out.println("Received WorkerPacket: " + (WorkerPacket)content);
                 if (((WorkerPacket) content).getVolunteerForWork()) {
                     allWorkers.add(packet.getSocketAddress());
                     if (!((WorkerPacket) content).getFinishedWork()) {
@@ -47,12 +47,10 @@ public class Broker extends Node {
 
                 if (((WorkerPacket) content).getFinishedWork()) {
                     count--;
-                    System.out.println("Count 1: " + count);
                 }
             }
             if (content.getType() == PacketContent.COMMANDPACKET) {
-                System.out.println("Number of tasks: " + ((CommandPacket) content).getNumTasks());
-                System.out.println("Data: " + ((CommandPacket) content).getData());
+                System.out.println("Received CommandPacket: " + (CommandPacket)content);
                 commandPacket = (CommandPacket) content;
                 brokerPacket = new BrokerPacket(((CommandPacket) commandPacket).getData());
                 count = commandPacket.numTasks;
@@ -61,6 +59,7 @@ public class Broker extends Node {
                 response = new AckPacketContent("OK - CommandPacket").toDatagramPacket();
                 response.setSocketAddress(packet.getSocketAddress());
                 socket.send(response);
+                System.out.println("Sent AckPacket: " + response);
 
                 workers = new Thread(() -> {
                     startWork();
@@ -82,7 +81,6 @@ public class Broker extends Node {
             Iterator itr = allWorkers.iterator();
             int countCopy = count;
             while (itr.hasNext()) {
-                System.out.println("Count 2: " + count);
                 SocketAddress s = (SocketAddress) itr.next();
                 if (countCopy > 0) {
                     try {

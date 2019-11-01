@@ -6,6 +6,7 @@ import java.net.DatagramPacket;
 import java.net.InetSocketAddress;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Scanner;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Worker extends Node {
     public boolean volunteerForWork;
     public boolean receivedWork;
     public boolean finishedWork;
+    private String name;
 
     /**
      * Constructor
@@ -30,7 +32,13 @@ public class Worker extends Node {
      */
     Worker(String dstHost, int dstPort, int srcPort) {
         try {
-            volunteerForWork = true;
+            Scanner input = new Scanner(System.in);
+            System.out.print("Please input name: ");
+            name = input.next();
+            System.out.print("\nWould you like to volunteer for work (y/n)? ");
+            volunteerForWork = input.hasNext("y") || input.hasNext("y");
+            System.out.println();
+
             receivedWork = false;
             finishedWork = false;
             dstAddress= new InetSocketAddress(dstHost, dstPort);
@@ -48,9 +56,11 @@ public class Worker extends Node {
         PacketContent content= PacketContent.fromDatagramPacket(packet);
         if(content.getType() == PacketContent.BROKERPACKET) {
             try {
+                System.out.println("Received BrokerPacket: " + (BrokerPacket)content);
                 receivedWork = true;
                 volunteerForWork = false;
                 finishedWork = false;
+
                 sendWorkerPacket();
             } catch (java.lang.Exception e) {
                 e.printStackTrace();
@@ -86,7 +96,7 @@ public class Worker extends Node {
         WorkerPacket wpacket = new WorkerPacket(volunteerForWork, receivedWork, finishedWork);
         DatagramPacket packet= null;
 
-        //System.out.println("Sending packet w/ availability for work");
+        System.out.println("Sending Worker Packet: " + wpacket);
         packet= wpacket.toDatagramPacket();
         packet.setSocketAddress(dstAddress);
         socket.send(packet);

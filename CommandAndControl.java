@@ -1,12 +1,10 @@
 /**
  *
  */
-import java.io.IOException;
-import java.net.DatagramSocket;
+
 import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.Scanner;
 
 /**
@@ -35,7 +33,7 @@ public class CommandAndControl extends Node {
         try {
             Scanner input = new Scanner(System.in);
             System.out.println("Please input the message you would liked printed:");
-            data = input.next();
+            data = input.nextLine();
             System.out.println("How many times would you like \n" + "-> " + data + "\nprinted?");
             numTasks = input.nextInt();
 

@@ -1,11 +1,10 @@
 /**
  *
  */
-import java.net.DatagramSocket;
+
 import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.Scanner;
 
 /**

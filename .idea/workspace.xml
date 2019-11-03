@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06dd38e6-1204-4b00-ac07-9865220efadd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/X11/AckPacketContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/X11/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/X11/FileInfoContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/X11/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/X11/PacketContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/X11/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/X11/message.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommandAndControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/CommandAndControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PacketContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/PacketContent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Worker.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +109,7 @@
       <workItem from="1572620473648" duration="3368000" />
       <workItem from="1572776949907" duration="5078000" />
       <workItem from="1572795580368" duration="616000" />
-      <workItem from="1572800683585" duration="1978000" />
+      <workItem from="1572800683585" duration="3619000" />
     </task>
     <servers />
   </component>

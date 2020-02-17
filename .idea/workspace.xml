@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06dd38e6-1204-4b00-ac07-9865220efadd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/X11/AckPacketContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/X11/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/X11/FileInfoContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/X11/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/X11/PacketContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/X11/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/X11/message.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,7 +102,19 @@
       <workItem from="1572620473648" duration="3368000" />
       <workItem from="1572776949907" duration="5078000" />
       <workItem from="1572795580368" duration="616000" />
-      <workItem from="1572800683585" duration="3619000" />
+      <workItem from="1572800683585" duration="4183000" />
+      <workItem from="1572956397891" duration="3000" />
+      <workItem from="1572962946314" duration="1564000" />
+      <workItem from="1573203792764" duration="1712000" />
+      <workItem from="1573481195156" duration="1907000" />
+      <workItem from="1574001935713" duration="1177000" />
+      <workItem from="1574009173418" duration="843000" />
+      <workItem from="1574071188368" duration="29000" />
+      <workItem from="1574098902272" duration="2770000" />
+      <workItem from="1574153851134" duration="1777000" />
+      <workItem from="1574192640987" duration="5316000" />
+      <workItem from="1574355990866" duration="619000" />
+      <workItem from="1574358124410" duration="5000" />
     </task>
     <servers />
   </component>
